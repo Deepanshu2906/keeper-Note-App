@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    background-color: gold;
+    padding: 20px 40px;
+    height: 72px;
+    color:white;
+    display: flex;
+    align-items: center;
+    font-size: large;
+    position: relative;
+    top:0;
+    left: 0;
+    box-shadow: 0 3px 5px  rgb(0,0,0,0.2);
+}
+.container {
+    height:200px;
+    display: flex;
+    max-width:350px !important;
+    margin:20px auto ;
+    justify-content: center;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
+}
+form{
+    width: 100%;
+}
+.createNote{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    font-size: large;
+}
+hr{
+    margin: 5px 0px !important;
+}
+.createNote input, textarea{
+    font-size: 20px;
+    outline: none;
+    border:none;
+
+}
+.createNote button{
+    
+    background-color: lightskyblue;
+    border-radius: 10px;
+    align-self: flex-end;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    position: relative;
+    bottom:-20px;
+    margin-top: -20px;
+    box-shadow: 0 2px 4px rgb(0,0,0,0.2);
+
+}
+.addNoteButton:hover{
+    border: 1px solid gainsboro
+}
+.note-container{
+    height:100%;
+    width:100vw;
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
+}
+.note {
+    height: max-content;
+    min-width: 200px;
+    max-width: 250px;
+    border:1px solid lightpink;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    float :left;
+    padding: 10px;
+    margin: 16px;
+    box-shadow: 2px 2px 5px #ccc;
+}
+
+.note h1 {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+}
+
+.note p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+  /* This is our footer section  */
+footer {
+    width: 100vw;
+    text-align: center;
+    color: grey;
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+
+  }
+  
