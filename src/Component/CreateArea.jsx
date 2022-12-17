@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 
 const CreateArea = (props) => {
-  const [note, setNote] = useState({ noteTitle: "", noteContent: "" });
+  const [note, setNote] = useState({ title: "", content: "" });
 
-  function handleSubmit(e) {
-    let title = e.target.title.value;
-    let content = e.target.content.value;
-
-    props.toAdd(title, content);
+  const changeHandler = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    // console.log(name, value);
     setNote({
-      noteTitle: "",
-      noteContent: "",
+      ...note,
+      [name]: value,
     });
+    // console.log(note);
+  };
+  function handleSubmit(e) {
+    props.toAdd(note);
+    setNote({
+      title: "",
+      content: "",
+    });
+    // console.log(note);
     e.preventDefault();
   }
+
   return (
     <div className="container">
       <form onSubmit={handleSubmit} action="">
@@ -23,8 +32,9 @@ const CreateArea = (props) => {
             type="text"
             name="title"
             placeholder="title"
-            // value={note.noteTitle}
+            value={note.title}
             required
+            onChange={changeHandler}
           />
           <hr />
           <textarea
@@ -33,10 +43,13 @@ const CreateArea = (props) => {
             id=""
             cols="30"
             rows="4"
-            // value={note.noteContent}
+            value={note.content}
             required
+            onChange={changeHandler}
           ></textarea>
-          <button type="submit">Add</button>
+          <button className="addNoteButton" type="submit">
+            Add
+          </button>
         </div>
       </form>
     </div>

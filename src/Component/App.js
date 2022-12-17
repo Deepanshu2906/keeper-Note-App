@@ -7,16 +7,23 @@ import Note from "./Note";
 function App() {
   const [notes, setNotes] = useState([]);
 
-  function handleAddNote(title, content) {
+  function handleAddNote(note) {
     // console.log(title, content);
     let newNote = {
-      noteTitle: title,
-      noteContent: content,
+      noteTitle: note.title,
+      noteContent: note.content,
     };
     setNotes((prev) => {
       return [...prev, newNote];
     });
-    console.log(notes);
+    // console.log(notes);
+  }
+  function deleteNote(id) {
+    // console.log("handle delete ");
+    let note = notes.slice();
+    let index = note.findIndex((p) => p.id == id);
+    note.splice(index, 1);
+    setNotes(note);
   }
   return (
     <>
@@ -29,6 +36,7 @@ function App() {
             id={index}
             title={note.noteTitle}
             content={note.noteContent}
+            delete={deleteNote}
           />
         ))}
       </div>

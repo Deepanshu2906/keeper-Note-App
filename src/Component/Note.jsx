@@ -1,14 +1,20 @@
 import React from "react";
 
 const Note = (props) => {
+  function handleDelete() {
+    props.delete(props.id);
+    // console.log("clicked");
+  }
   return (
     <div className="note">
-      {/* <div className="note-title"> */}
       <h1>{props.title}</h1>
-      {/* </div> */}
-      {/* <div className="note-content"> */}
       <p>{props.content}</p>
-      {/* </div> */}
+      <button
+        onClick={handleDelete}
+        className="btn btn-outline-danger btn-sm ms-auto"
+      >
+        delete
+      </button>
     </div>
   );
 };
